@@ -30,7 +30,7 @@ const classStyles = reactive({
   bgColorBlue: false,
   txtSize24: true,
 });
-const classInfo = ref("txtColorRed txtSize24");
+const classInfo = ref("txtColorRed txtSize24"); // text.classList, reduce 이용해서 한 개 삭제 가능.
 </script>
 <template>
   <h2>특정 속성의 경우</h2>
