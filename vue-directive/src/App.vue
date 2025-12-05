@@ -1,23 +1,23 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterLink, RouterView } from "vue-router";
+import HelloWorld from "./components/HelloWorld.vue";
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
       <nav>
+        <!-- router에 등록된 커포넌트를 부르는 태그-->
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/bind">v-bind</RouterLink>
+        <RouterLink to="/model">v-model</RouterLink>
+        <RouterLink to="/todo">ToDoList</RouterLink>
       </nav>
     </div>
   </header>
-
   <RouterView />
+  <!-- router를 이용해서부른 컴포넌트가 출력되는 위치 -->
 </template>
 
 <style scoped>

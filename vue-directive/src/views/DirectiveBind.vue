@@ -62,6 +62,11 @@ const classInfo = ref("txtColorRed txtSize24"); // text.classList, reduce 이용
   <h2>Class 속성</h2>
   <!-- 다중으로 제어가능 -->
   <p id="cp" v-bind:class="classInfo">{{ msg }}</p>
+  <p v-bind:class="{ txtColorRed: istxtColorRed, bgColorBlue: isbgcolorBlue }">
+    {{ msg }}
+  </p>
+  <p v-bind:class="classStyles">{{ msg }}</p>
+  <!-- true 값 적용.-->
 </template>
 <style scoped>
 .txtColorRed {

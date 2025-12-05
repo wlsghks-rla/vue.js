@@ -23,6 +23,42 @@ const router = createRouter({
       component: () => import("../views/DirectiveBind.vue"),
       // 처음에 느린 경우를 해소하기 위해 동적 컴포넌트를 불러내는 방식 => 경로 호출 시 작동
     },
+    {
+      path: "/model",
+      name: "DirectiveModel",
+      component: () => import("../views/DirectiveModel.vue"),
+      // 처음에 느린 경우를 해소하기 위해 동적 컴포넌트를 불러내는 방식 => 경로 호출 시 작동
+    },
+    {
+      path: "/on",
+      name: "DirectiveOn",
+      component: () => import("../views/DirectiveOn.vue"),
+      // 처음에 느린 경우를 해소하기 위해 동적 컴포넌트를 불러내는 방식 => 경로 호출 시 작동
+    },
+    {
+      path: "/if",
+      name: "DirectiveIf",
+      component: () => import("../views/DirectiveIf.vue"),
+      // 처음에 느린 경우를 해소하기 위해 동적 컴포넌트를 불러내는 방식 => 경로 호출 시 작동
+    },
+    {
+      path: "/for",
+      name: "DirectiveFor",
+      component: () => import("../views/DirectiveFor.vue"),
+      // 처음에 느린 경우를 해소하기 위해 동적 컴포넌트를 불러내는 방식 => 경로 호출 시 작동
+    },
+    {
+      path: "/forobj",
+      name: "DirectiveForObj",
+      component: () => import("../views/DirectiveForObj.vue"),
+      // 처음에 느린 경우를 해소하기 위해 동적 컴포넌트를 불러내는 방식 => 경로 호출 시 작동
+    },
+    {
+      path: "/todo",
+      name: "ToDoDirective",
+      component: () => import("../views/ToDoDirective.vue"),
+      // 처음에 느린 경우를 해소하기 위해 동적 컴포넌트를 불러내는 방식 => 경로 호출 시 작동
+    },
   ],
 });
 
