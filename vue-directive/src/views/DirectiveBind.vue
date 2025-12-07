@@ -61,7 +61,7 @@ const classInfo = ref("txtColorRed txtSize24"); // text.classList, reduce 이용
   <p><img alt="vue 로고" v-bind="imgAttributes" /></p>
   <h2>Class 속성</h2>
   <!-- 다중으로 제어가능 -->
-  <p id="cp" v-bind:class="classInfo">{{ msg }}</p>
+  <p id="cp" v-bind:class="{txtColorRed txtSize24}">{{ msg }}</p>
   <p v-bind:class="{ txtColorRed: istxtColorRed, bgColorBlue: isbgcolorBlue }">
     {{ msg }}
   </p>
