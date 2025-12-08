@@ -1,5 +1,4 @@
-<!-- veiws/ToDoDirective.vue -->
-<!-- 컴포넌트 분리 기준: 독립성, 반복기준 -->
+<!--views/TodoList.vue-->
 <template>
   <div id="myDIV" class="header">
     <h2>My To Do List</h2>
@@ -8,22 +7,18 @@
   </div>
 
   <ul id="myUL">
-    <!-- li : click => 해당 li태그의 클래스 속성이 변경.
-       span : click => 해당 li태그를 삭제.-->
-
-    <li
-      v-for="todo in todos"
-      v-bind:class="{ checked: todo.complete }"
-      v-on:click="todoCompleted(todo.no)"
-    >
-      {{ todo.task
-      }}<span v-on:click.stop="delTodo(todo.no)" class="close">X</span>
-    </li>
+    <TaskInfo
+      v-for="info in todos"
+      v-bind:key="info.no"
+      v-bind:todo="info"
+      v-on:taskChecked="todoCompleted"
+      v-on:delTask="delTodo"
+    /><!--todoCompleted는 자식으로 부터 받기 때문에 () 붙이면안됨-->
   </ul>
 </template>
 <script setup>
 import { ref, reactive } from "vue";
-// Data : 할일목록
+import TaskInfo from "@/components/TaskInfo.vue";
 const todos = reactive([
   { no: 1, task: "Hit the gym", complete: false },
   { no: 2, task: "Pay bills", complete: true },
@@ -34,20 +29,14 @@ const todos = reactive([
 ]);
 
 const todoCompleted = (selectedNo) => {
-  // li : click => 해당 li태그의 클래스 속성이 변경.
-  // => 할일의 고유번호를 가지고 해당 할일의 complete를 제어.
   todos.forEach((todo) => {
-    // 1) 할일의 고유번호를 가지고 해당 할일을 찾고
     if (todo.no == selectedNo) {
-      // 2) 그 할일의 complete 를 변경
       todo.complete = !todo.complete;
     }
   });
 };
 
 const delTodo = (selectedNo) => {
-  // span : click => 해당 li태그를 삭제.
-  //  => li 채그와 연동된 실제데이터를 삭제.
   let delIdx = todos.findIndex((todo) => todo.no == selectedNo);
   todos.splice(delIdx, 1);
 };
