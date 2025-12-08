@@ -40,7 +40,7 @@ const postList = reactive([
 const startName = ref("초기값");
 const point = Math.ceil(Math.random() * 5);
 const startPoint = ref(point);
-const createStartPoint = (name) => {
+const createStartPoint = name => {
   // emit의 이벤트를 처리하는 핸들러: 매개변수가 자식이 전달하는 값
   startPoint.value = Math.ceil(Math.random() * 5);
   startName.value = name;
