@@ -26,7 +26,7 @@ const addUser = async () => {
   // 서버에 등록
   const res = await axios
     .post(`${fakeServer}/users`, info) // 자동으로 json변환 후 post
-    .catch((err) => console.log(err));
+    .catch(err => console.log(err));
   info.id = res.data.id;
   counterStore.increment(); // increment();와 동일
   // router.push({ name: "userList" });

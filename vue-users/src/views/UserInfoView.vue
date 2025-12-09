@@ -10,10 +10,10 @@ const route = useRoute(); // 호출당한 정보
 const userId = route.params.id;
 const info = ref({}); // 값이 변화돼서 reactive 사용 불가.
 const fakeServer = "https://jsonplaceholder.typicode.com";
-const getUserInfo = async (id) => {
+const getUserInfo = async id => {
   const res = await axios
     .get(`${fakeServer}/users/${id}`)
-    .catch((err) => console.log(err));
+    .catch(err => console.log(err));
   info.value = res.data;
 };
 
