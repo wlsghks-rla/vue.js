@@ -2,6 +2,7 @@
 <!-- layouts -> 실제 페이지가 아닌 규격을 정하는 것을 담는 폴더. -->
 <!-- template과 style이 전부일 때가 많음 -->
 <!-- 1. 효율(동일한 크기로 적용), 2.강제(정해진 형태로 적용) -->
+<!-- primevue, vuetify -->
 <template>
   <div class="container">
     <header>
