@@ -5,7 +5,7 @@ export const useBoardStore = defineStore("board", {
   state: () => ({
     // 저장공간에 해당.
     posts: [], // 전체조회
-    currentPost: {}, // 단건조회
+    currentPost : {}, // 단건조회
     error: "",
   }),
   // 기능.
